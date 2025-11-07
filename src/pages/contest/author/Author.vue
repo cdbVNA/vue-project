@@ -18,7 +18,7 @@
 					года.
 				</p> 
 			</div>
-			<div class="advice_img"><img src="author/Song.png" alt="" /></div>
+			<div class="advice_img"><img src="/author/Song.png" alt="" /></div>
 		</div>
 
 		<div class="container">
@@ -40,13 +40,13 @@
 		<div class="regulations">
 			<div class="regulation">
 				<a href="/path/to/your/file2024.docx" download>
-					<img src="author/icon.png" alt="" class="icon" />
+					<img src="/author/icon.png" alt="" class="icon" />
 					<p>Положение детского литературного конкурса имени Н.А. Внукова “Песни перьев” 2024г.</p>
 				</a>
 			</div>
 			<div class="regulation">
 				<a href="/path/to/your/file2023.docx" download>
-					<img src="author/icon.png" alt="" />
+					<img src="/author/icon.png" alt="" />
 					<p>Положение детского литературного конкурса имени Н.А. Внукова “Песни перьев” 2023г.</p>
 				</a>
 			</div>

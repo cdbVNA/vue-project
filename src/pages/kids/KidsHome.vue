@@ -2,7 +2,7 @@
 	<div class="page-container">
 		<header class="header">
 			<video class="banner-video" autoplay muted loop playsinline>
-				<source src="kids/ship.mp4" type="video/mp4" />
+				<source src="/kids/ship.mp4" type="video/mp4" />
 				Ваш браузер не поддерживает видео.
 			</video> 
 			<div class="overlay-text">
@@ -53,11 +53,11 @@ import { useRouter } from 'vue-router'
 
 // Массив книг с путями к изображениям
 const books = ref([
-	{ id: 10, src: 'assets/book/book10.webp' },
-	{ id: 16, src: 'assets/book/book16.png' },
-	{ id: 3, src: 'assets/book/book3.png' },
-	{ id: 14, src: 'assets/book/book14.webp' },
-	{ id: 0, src: 'assets/book/book.jpg' },
+	{ id: 10, src: '/assets/book/book10.webp' },
+	{ id: 16, src: '/assets/book/book16.png' },
+	{ id: 3, src: '/assets/book/book3.png' },
+	{ id: 14, src: '/assets/book/book14.webp' },
+	{ id: 0, src: '/assets/book/book.jpg' },
 ])
 
 const router = useRouter()

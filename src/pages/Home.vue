@@ -9,7 +9,7 @@
               мечтами.</p>
           </div> 
         </div>
-        <div class="section_img"><img src="assets/vnukov_noR.jpg" alt="" /></div>
+        <div class="section_img"><img src="/assets/vnukov_noR.jpg" alt="" /></div>
       </div>
       <div class="section-about">
         <h1 class="about-title">О Писателе</h1>
@@ -47,7 +47,7 @@
           пишу, я всё-таки пишу и о себе</q>
         <p>Николай Внуков</p>
       </div>
-      <img src="assets/quote.png" alt="" />
+      <img src="/assets/quote.png" alt="" />
     </div>
     <div class="container_title">
       <h1 id="books">книги писателя</h1>
@@ -66,17 +66,14 @@
 
 <script>
 import { ref } from 'vue'
-import Figure from '/components/Figure.vue'
-import Header from '/components/Header.vue'
+import Header from '@/components/Header.vue'
 import { useRouter } from 'vue-router'
-
 import ParallaxBooks from '@/components/ParallaxBooks.vue'
 import photosData from '@/photos.js'
 
 export default {
   components: {
     Header,
-    Figure,
     ParallaxBooks,
   },
   setup() {

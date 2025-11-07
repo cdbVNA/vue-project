@@ -17,12 +17,12 @@
 	</div>
 	<div class="navigation" v-if="photo">
 		<div class="nav-button" @click.prevent="goBack">
-			<div class="arrow-left"><img src="assets/back.png" alt="" /></div>
+			<div class="arrow-left"><img src="/assets/back.png" alt="" /></div>
 			<span class="nav-title">{{ prevTitle }}</span>
 		</div> 
 		<div class="nav-button" @click.prevent="goNext">
 			<span class="nav-title">{{ nextTitle }}</span>
-			<div class="arrow-right"><img src="assets/back.png" alt="" /></div>
+			<div class="arrow-right"><img src="/assets/back.png" alt="" /></div>
 		</div>
 	</div>
 </template>
