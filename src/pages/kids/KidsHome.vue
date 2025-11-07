@@ -57,7 +57,7 @@ const books = ref([
 	{ id: 16, src: 'src/assets/book/book16.png' },
 	{ id: 3, src: 'src/assets/book/book3.png' },
 	{ id: 14, src: 'src/assets/book/book14.webp' },
-	{ id: 0, src: 'src/assets/book/book.png' },
+	{ id: 0, src: 'src/assets/book/book.jpg' },
 ])
 
 const router = useRouter()
