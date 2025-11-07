@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="container_title">
 				<h1>Журналы и Газеты</h1>
-				<hr />
+				<hr /> 
 				<p>Николай Внуков входил в редакционную коллегию детского журнала «Костёр», печатался в газетах «Смена»,
 					«Ленинские искры», журнале «Аврора», «Искорка», «Юный следопыт». В этом разделе вы найдёте архив
 					публикаций писателя: рассказы, очерки, повести и много интересных заметок.</p>
@@ -13,55 +13,55 @@
 			<div class="fire-container">
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="/src/pages/journal/assets/fire1958.pdf" />
+						<VPdfViewer src="journal/assets/fire1958.pdf" />
 					</div>
 					<h2>Костер №05, 1968</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="/src/pages/journal/assets/fire1968.pdf" />
+						<VPdfViewer src="journal/assets/fire1968.pdf" />
 					</div>
 					<h2>Костер №06, 1968</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="/src/pages/journal/assets/fire.pdf" />
+						<VPdfViewer src="journal/assets/fire.pdf" />
 					</div>
 					<h2>Костер №10, 1968</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="/src/pages/journal/assets/fire1974.pdf" />
+						<VPdfViewer src="journal/assets/fire1974.pdf" />
 					</div>
 					<h2>Костер №11, 1974</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="/src/pages/journal/assets/fire19961.pdf" />
+						<VPdfViewer src="journal/assets/fire19961.pdf" />
 					</div>
 					<h2>Костер №10, 1996</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="/src/pages/journal/assets/fire19964.pdf" />
+						<VPdfViewer src="journal/assets/fire19964.pdf" />
 					</div>
 					<h2>Костер №10, 1968</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="/src/pages/journal/assets/fire1996.pdf" />
+						<VPdfViewer src="journal/assets/fire1996.pdf" />
 					</div>
 					<h2>Костер №10, 1968</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="/src/pages/journal/assets/fire2001.pdf" />
+						<VPdfViewer src="journal/assets/fire2001.pdf" />
 					</div>
 					<h2>Костер №10, 1968</h2>
-				</div>
+				</div> 
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="/src/pages/journal/assets/fire2004.pdf" />
+						<VPdfViewer src="journal/assets/fire2004.pdf" />
 					</div>
 					<h2>Костер №10, 1968</h2>
 				</div>

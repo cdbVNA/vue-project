@@ -2,7 +2,7 @@ export default [
 	{
 		id: 0,
 		link: '/book/0',
-		src: '~/assets/book/book.jpg',
+		src: 'assets/book/book.jpg',
 		title: 'Приказ по шестому полку',
 		author: 'Внуков Николай Андреевич',
 		artist: 'Лямин Николай',
@@ -18,7 +18,7 @@ export default [
 	{
 		id: 1,
 		link: '/book/1',
-		src: '~/assets/book/book1.png',
+		src: 'assets/book/book1.png',
 		title: 'Паруса над волнами',
 		author: 'Внуков Николай Андреевич',
 		artist: 'Яхнин Рудольф',
@@ -35,7 +35,7 @@ export default [
 	{
 		id: 2,
 		link: '/book/2',
-		src: '~/assets/book/book2.webp',
+		src: 'assets/book/book2.webp',
 		title: 'Розовая Гвиана',
 		author: 'Внуков Николай ',
 		artist: 'Шабанов Юрий',
@@ -51,7 +51,7 @@ export default [
 	{
 		id:18 ,
 		link: '/book/18',
-		src: '~/assets/book/book3.jpg',
+		src: 'assets/book/book3.jpg',
 		title: 'Главный экспонат',
 		author: 'Внуков Николай',
 		artist: ' Шевченко Владимир',
@@ -67,7 +67,7 @@ export default [
 	{
 		id: 3,
 		link: '/book/3',
-		src: '~/assets/book/book3.png',
+		src: 'assets/book/book3.png',
 		title: 'Путешествие не кончается',
 		author: 'Внуков Николай',
 		artist: 'Рудаков Сергей',
@@ -83,7 +83,7 @@ export default [
 	{
 		id: 4,
 		link: '/book/4',
-		src: '~/assets/book/book4.png',
+		src: 'assets/book/book4.png',
 		title: 'Динамис мобилис (сборник)',
 		author: 'Внуков Николай Андреевич',
 		artist: 'Селизаров Леонтий ',
@@ -100,7 +100,7 @@ export default [
 	{
 		id: 5,
 		link: '/book/5',
-		src: '~/assets/book/book5.webp',
+		src: 'assets/book/book5.webp',
 		title: 'Один',
 		author: 'Внуков Николай',
 		artist: 'Жмайлов Игорь',
@@ -119,7 +119,7 @@ export default [
 	{
 		id: 7,
 		link: '/book/7',
-		src: '~/assets/book/book7.png',
+		src: 'assets/book/book7.png',
 		title: 'Тот, кто называл себя О. Генри',
 		author: 'Внуков Николай',
 		artist: 'Киселёв Юрий',
@@ -135,7 +135,7 @@ export default [
 	{
 		id: 8,
 		link: '/book/8',
-		src: '~/assets/book/book8.webp',
+		src: 'assets/book/book8.webp',
 		title: 'Наша восемнадцатая осень',
 		author: 'Внуков Николай',
 		artist: 'Хвостов Владимир',
@@ -152,7 +152,7 @@ export default [
 	{
 		id: 9,
 		link: '/book/9',
-		src: '~/assets/book/book9.png',
+		src: 'assets/book/book9.png',
 		title: 'Фотография Архимеда',
 		author: 'Внуков Николай',
 		artist: 'Селизаров Леонтий',
@@ -168,7 +168,7 @@ export default [
 	{
 		id: 10,
 		link: '/book/10',
-		src: '~/assets/book/book10.webp',
+		src: 'assets/book/book10.webp',
 		title: 'На чужих крыльях',
 		author: 'Внуков Николай',
 		artist: ' Лямин Николай',
@@ -184,7 +184,7 @@ export default [
 	{
 		id: 11,
 		link: '/book/11',
-		src: '~/assets/book/book11.png',
+		src: 'assets/book/book11.png',
 		title: 'Великие путешественники. Биографический словарь',
 		author: 'Внуков Николай',
 		artist: 'Макарова Светлана',
@@ -201,7 +201,7 @@ export default [
 	{
 		id: 12,
 		link: '/book/12',
-		src: '~/assets/book/book12.png',
+		src: 'assets/book/book12.png',
 		title: 'Слушайте песню перьев',
 		author: 'Внуков Николай',
 		artist: 'Рейпольский Алексей',
@@ -217,7 +217,7 @@ export default [
 	{
 		id: 13,
 		link: '/book/13',
-		src: '~/assets/book/book13.png',
+		src: 'assets/book/book13.png',
 		title: 'Четыре рассказа о войне (сборник)',
 		author: 'Внуков Николай',
 		artist: 'Лямин Николай',
@@ -233,7 +233,7 @@ export default [
 	{
 		id: 14,
 		link: '/book/14',
-		src: '~/assets/book/book14.webp',
+		src: 'assets/book/book14.webp',
 		title: 'Москва за нами',
 		author: 'Внуков Николай',
 		artist: 'Рудаков С., Рудакова И.',
@@ -249,7 +249,7 @@ export default [
 	{
 		id: 15,
 		link: '/book/15',
-		src: '~/assets/book/book15.png',
+		src: 'assets/book/book15.png',
 		title: 'Огненное кольцо',
 		author: 'Внуков Николай Андреевич',
 		artist: '',
@@ -265,7 +265,7 @@ export default [
 	{
 		id: 16,
 		link: '/book/16',
-		src: '~/assets/book/book16.png',
+		src: 'assets/book/book16.png',
 		title: 'Старая гильза',
 		author: 'Внуков Николай',
 		artist: 'Кочергина Н.',
@@ -281,7 +281,7 @@ export default [
 	{
 		id: 17,
 		link: '/book/17',
-		src: '~/assets/book/book17.png',
+		src: 'assets/book/book17.png',
 		title: '«Сверре» зовет на помощь',
 		author: 'Внуков Николай',
 		artist: 'Аносов Евгений ',

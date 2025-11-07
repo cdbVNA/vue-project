@@ -49,7 +49,7 @@ export default {
   },
   beforeUnmount() {
     cancelAnimationFrame(this._animationFrame)
-  },
+  }, 
   methods: {
     goToPhoto(id) {
       this.$router.push(`/book/${id}`).then(() => {

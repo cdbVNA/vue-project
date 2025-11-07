@@ -1,5 +1,5 @@
 <template>
-	<div class="wrapper">
+	<div class="wrapper"> 
 		<div class="container">
 			<div class="container_title">
 				<h1>Иллюстраторы</h1>
@@ -10,7 +10,7 @@
 		</div>
 		<div class="advice">
 			<div class="advice_img">
-				<img src="/src/pages/illustrator/assets/reypolskiy/autor.png" alt="" />
+				<img src="illustrator/reypolskiy/autor.png" alt="" />
 			</div>
 			<div class="advice_text">
 				<p>Алексей Дмитриевич Рейпольский — художник, мастер книжной иллюстрации, член союза художников РФ.
@@ -34,13 +34,13 @@
 					книг, среди которых оказалась книга «Паруса над волнами» Николая Внукова.</p>
 			</div>
 			<div class="advice_img">
-				<img src="/src/pages/illustrator/assets/yahnin/autor.png" alt="" />
+				<img src="illustrator/yahnin/autor.png" alt="" />
 			</div>
 		</div>
 		<Parallax :images="images2" :rotation="-6" width="100%" :initialOffset="0" />
 		<div class="advice">
 			<div class="advice_img">
-				<img src="/src/pages/illustrator/assets/lyamin/autor.png" alt="" />
+				<img src="illustrator/lyamin/autor.png" alt="" />
 			</div>
 			<div class="advice_text">
 				<p>Лямин Николай Васильевич - художник-график, член союза художников СССР. В 1948 году поступил на
@@ -66,13 +66,13 @@
 					Внукова нарисовал иллюстрации к книге «Старая гильза» 1972 года выпуска.</p>
 			</div>
 			<div class="advice_img">
-				<img src="/src/pages/illustrator/assets/kochegin/autor.png" alt="" />
+				<img src="illustrator/kochegin/autor.png" alt="" />
 			</div>
 		</div>
 		<Parallax :images="images4" :rotation="-6" width="100%" :initialOffset="0" />
 		<div class="advice">
 			<div class="advice_img">
-				<img src="/src/pages/illustrator/assets/selizarov/autor.png" alt="" />
+				<img src="illustrator/selizarov/autor.png" alt="" />
 			</div>
 			<div class="advice_text">
 				<p>Селизаров Леонтий Филиппович – советский художник, иллюстратор. Член Союза художников СССР. График.
@@ -95,14 +95,14 @@
 					Являлся членом-корреспондентом Российской академии художеств. Заведовал кафедрой графики.</p>
 			</div>
 			<div class="advice_img">
-				<img src="/src/pages/illustrator/assets/pahomov/autor.png" alt="" />
+				<img src="illustrator/pahomov/autor.png" alt="" />
 			</div>
 		</div>
 		<Parallax :images="images6" :rotation="-6" width="100%" :initialOffset="0" />
 		<div class="advice">
 			<div class="advice_img">
-				<img src="/src/pages/illustrator/assets/shabanov/autor.png" alt="" />
-			</div>
+				<img src="illustrator/shabanov/autor.png" alt="" />
+			</div> 
 			<div class="advice_text">
 				<p>Шабанов Юрий Михайлович - график. Член Союза художников СССР. Дипломная работа в Академии художеств —
 					оформление и иллюстрации к повести К. Паустовского «Судьба Шарля Лонсевиля». Иллюстрировал
@@ -122,13 +122,13 @@
 import Parallax from './components/Parallax.vue'
 
 const images1 = [
-	'/src/pages/illustrator/assets/reypolskiy/1.jpg',
-	'/src/pages/illustrator/assets/reypolskiy/2.jpg',
-	'/src/pages/illustrator/assets/reypolskiy/5.jpg',
-	'/src/pages/illustrator/assets/reypolskiy/4.jpg',
-	'/src/pages/illustrator/assets/reypolskiy/3.jpg',
-	'/src/pages/illustrator/assets/reypolskiy/6.jpg',
-	'/src/pages/illustrator/assets/reypolskiy/7.jpg',
+	'illustrator/reypolskiy/1.jpg',
+	'illustrator/reypolskiy/2.jpg',
+	'illustrator/reypolskiy/5.jpg',
+	'illustrator/reypolskiy/4.jpg',
+	'illustrator/reypolskiy/.jpg',
+	'illustrator/reypolskiy/6.jpg',
+	'illustrator/reypolskiy/7.jpg',
 ]
 
 
@@ -142,48 +142,48 @@ const images2 = [
 ]
 
 const images3 = [
-	'/src/pages/illustrator/assets/lyamin/1.webp',
-	'/src/pages/illustrator/assets/lyamin/1.png',
-	'/src/pages/illustrator/assets/lyamin/2.png',
-	'/src/pages/illustrator/assets/lyamin/3.png',
-	'/src/pages/illustrator/assets/lyamin/4.png',
-	'/src/pages/illustrator/assets/lyamin/5.png',
-	'/src/pages/illustrator/assets/lyamin/1.png',
+	'illustrator/lyamin/1.webp',
+	'illustrator/lyamin/1.png',
+	'illustrator/lyamin/2.png',
+	'illustrator/lyamin/3.png',
+	'illustrator/lyamin/4.png',
+	'illustrator/lyamin/5.png',
+	'illustrator/lyamin/1.png',
 ]
 const images4 = [
-	'/src/pages/illustrator/assets/kochegin/1.jpg',
-	'/src/pages/illustrator/assets/kochegin/2.jpg',
-	'/src/pages/illustrator/assets/kochegin/5.jpg',
-	'/src/pages/illustrator/assets/kochegin/4.jpg',
-	'/src/pages/illustrator/assets/kochegin/3.jpg',
+	'illustrator/kochegin/1.jpg',
+	'illustrator/kochegin/2.jpg',
+	'illustrator/kochegin/5.jpg',
+	'illustrator/kochegin/4.jpg',
+	'illustrator/kochegin/3.jpg',
 ]
 
 const images5 = [
-	'/src/pages/illustrator/assets/selizarov/1.png',
-	'/src/pages/illustrator/assets/selizarov/1.jpg',
-	'/src/pages/illustrator/assets/selizarov/2.jpg',
-	'/src/pages/illustrator/assets/selizarov/3.jpg',
-	'/src/pages/illustrator/assets/selizarov/4.jpg',
-	'/src/pages/illustrator/assets/selizarov/5.jpg',
-	'/src/pages/illustrator/assets/selizarov/6.jpg',
+	'illustrator/selizarov/1.png',
+	'illustrator/selizarov/1.jpg',
+	'illustrator/selizarov/2.jpg',
+	'illustrator/selizarov/3.jpg',
+	'illustrator/selizarov/4.jpg',
+	'illustrator/selizarov/5.jpg',
+	'illustrator/selizarov/6.jpg',
 ]
 
 const images6 = [
-	'/src/pages/illustrator/assets/pahomov/1.jpg',
-	'/src/pages/illustrator/assets/pahomov/1.png',
-	'/src/pages/illustrator/assets/pahomov/2.png',
-	'/src/pages/illustrator/assets/pahomov/5.png',
-	'/src/pages/illustrator/assets/pahomov/4.png',
-	'/src/pages/illustrator/assets/pahomov/3.png',
+	'illustrator/pahomov/1.jpg',
+	'illustrator/pahomov/1.png',
+	'illustrator/pahomov/2.png',
+	'illustrator/pahomov/5.png',
+	'illustrator/pahomov/4.png',
+	'illustrator/pahomov/3.png',
 ]
 
 const images7 = [
-	'/src/pages/illustrator/assets/shabanov/0.jpg',
-	'/src/pages/illustrator/assets/shabanov/1.jpg',
-	'/src/pages/illustrator/assets/shabanov/2.jpg',
-	'/src/pages/illustrator/assets/shabanov/5.jpg',
-	'/src/pages/illustrator/assets/shabanov/4.jpg',
-	'/src/pages/illustrator/assets/shabanov/3.jpg',
+	'illustrator/shabanov/0.jpg',
+	'illustrator/shabanov/1.jpg',
+	'illustrator/shabanov/2.jpg',
+	'illustrator/shabanov/5.jpg',
+	'illustrator/shabanov/4.jpg',
+	'illustrator/shabanov/3.jpg',
 ]
 
 </script>

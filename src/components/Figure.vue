@@ -1,6 +1,6 @@
 <template>
 	<div class="rectangle">
-		<a class="logo"><img src="/src/assets/logo.png" alt="" /></a>
+		<a class="logo"><img src="assets/logo.png" alt="" /></a>
 	</div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper">
-		<div class="container">
+		<div class="container"> 
 			<div class="container_title">
 				<h1>О нас</h1>
 				<hr />

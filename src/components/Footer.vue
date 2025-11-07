@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="footer-overlay">
+    <div class="footer-overlay"> 
       <div class="footer-top">
         <div class="footer-columns">
           <div class="column">
@@ -25,10 +25,10 @@
         </div>
         <div class="footer-logo">
           <div class="logo_cdb">
-            <img src="~/assets/logo_cdb.png" alt="" />
+            <img src="assets/logo_cdb.png" alt="" />
           </div>
           <div class="logo_cbs">
-            <img src="~/assets/logo_cbs.png" alt="" />
+            <img src="assets/logo_cbs.png" alt="" />
           </div>
         </div>
       </div>

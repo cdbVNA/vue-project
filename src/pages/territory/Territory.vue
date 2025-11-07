@@ -109,18 +109,18 @@
 		<div class="gallery-wrapper">
 			<div class="gallery">
 				<div class="row">
-					<img src="/src/pages/territory/assets/1.png" alt="Image 1" />
-					<img src="/src/pages/territory/assets/2.png" alt="Image 2" />
-					<img src="/src/pages/territory/assets/3.png" alt="Image 3" />
+					<img src="territory/1.png" alt="Image 1" />
+					<img src="territory/2.png" alt="Image 2" />
+					<img src="territory/3.png" alt="Image 3" />
 				</div>
 
 				<div class="row">
-					<img src="/src/pages/territory/assets/4.png" alt="Main Image" class="wide" />
+					<img src="territory/4.png" alt="Main Image" class="wide" />
 				</div>
 
 				<div class="row">
-					<img src="/src/pages/territory/assets/5.png" alt="Image 5" />
-					<img src="/src/pages/territory/assets/6.png" alt="Image 6" />
+					<img src="territory/5.png" alt="Image 5" />
+					<img src="territory/6.png" alt="Image 6" />
 				</div>
 			</div>
 		</div>

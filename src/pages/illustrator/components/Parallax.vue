@@ -34,7 +34,7 @@ const onScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', onScroll)
-  animate()
+  animate() 
 })
 
 onUnmounted(() => {

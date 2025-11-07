@@ -1,5 +1,5 @@
 <template>
-	<div class="wrapper">
+	<div class="wrapper"> 
 		<div class="container">
 			<div class="container_title">
 				<h1>Конкурс «Песни Перьев»</h1>
@@ -16,9 +16,9 @@
 					Принять участие могут дети от 10 до 18 лет, которые любят писать и мечтают стать настоящими
 					писателями. Подробные условия участия и <a href="#">Положение Конкурса</a> опубликуем осенью 2025
 					года.
-				</p>
+				</p> 
 			</div>
-			<div class="advice_img"><img src="/src/pages/contest/author/assets/Song.png" alt="" /></div>
+			<div class="advice_img"><img src="author/Song.png" alt="" /></div>
 		</div>
 
 		<div class="container">
@@ -40,13 +40,13 @@
 		<div class="regulations">
 			<div class="regulation">
 				<a href="/path/to/your/file2024.docx" download>
-					<img src="/src/pages/contest/author/assets/icon.png" alt="" class="icon" />
+					<img src="author/icon.png" alt="" class="icon" />
 					<p>Положение детского литературного конкурса имени Н.А. Внукова “Песни перьев” 2024г.</p>
 				</a>
 			</div>
 			<div class="regulation">
 				<a href="/path/to/your/file2023.docx" download>
-					<img src="/src/pages/contest/author/assets/icon.png" alt="" />
+					<img src="author/icon.png" alt="" />
 					<p>Положение детского литературного конкурса имени Н.А. Внукова “Песни перьев” 2023г.</p>
 				</a>
 			</div>
@@ -61,16 +61,16 @@ export default {
 	setup() {
 		const videos = ref([
 			{
-				link: '/src/pages/contest/author/assets/3.mp4',
-				thumbnail: '/src/pages/contest/author/assets/3.png',
+				link: 'author/3.mp4',
+				thumbnail: 'author/3.png',
 			},
 			{
-				link: '/src/pages/contest/author/assets/1.MP4',
-				thumbnail: '/src/pages/contest/author/assets/1.png',
+				link: 'author/1.MP4',
+				thumbnail: 'author/1.png',
 			},
 			{
-				link: '/src/pages/contest/author/assets/2.mp4',
-				thumbnail: '/src/pages/contest/author/assets/2.png',
+				link: 'author/2.mp4',
+				thumbnail: 'author/2.png',
 			},
 		])
 		return { videos }
