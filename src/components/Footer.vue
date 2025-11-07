@@ -25,10 +25,10 @@
         </div>
         <div class="footer-logo">
           <div class="logo_cdb">
-            <img src="/src/assets/logo_cdb.png" alt="" />
+            <img src="~/assets/logo_cdb.png" alt="" />
           </div>
           <div class="logo_cbs">
-            <img src="/src/assets/logo_cbs.png" alt="" />
+            <img src="~/assets/logo_cbs.png" alt="" />
           </div>
         </div>
       </div>

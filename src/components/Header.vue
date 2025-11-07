@@ -5,7 +5,7 @@
     <div :class="['top-menu', { 'main-page': isHomePage, 'other-page': !isHomePage }]">
       <div class="logo-container">
         <router-link to="/">
-          <img src="/src/assets/logo.png" alt="Логотип" class="logo" />
+          <img src="~/assets/logo.png" alt="Логотип" class="logo" />
         </router-link>
       </div>
       <div class="top-menu_right">

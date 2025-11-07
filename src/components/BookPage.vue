@@ -23,15 +23,15 @@
 				<div id="quote">
 					<h2 class="title">Цитаты</h2>
 					<div class="quote-text">
-						<img src="/src/assets/forging.png" alt="" />
+						<img src="~/assets/forging.png" alt="" />
 						<p>{{ book.quote_one }}</p>
 					</div>
 					<div class="quote-text">
-						<img src="/src/assets/forging.png" alt="" />
+						<img src="~/assets/forging.png" alt="" />
 						<p>{{ book.quote_two }}</p>
 					</div>
 					<div class="quote-text">
-						<img src="/src/assets/forging.png" alt="" />
+						<img src="~/assets/forging.png" alt="" />
 						<p>{{ book.quote_tree }}</p>
 					</div>
 				</div>
@@ -47,12 +47,12 @@
 	</div>
 	<div class="navigation" v-if="book">
 		<div class="nav-button" @click.prevent="goBack">
-			<div class="arrow-left"><img src="/src/assets/back.png" alt="" /></div>
+			<div class="arrow-left"><img src="~/assets/back.png" alt="" /></div>
 			<span class="nav-title">{{ prevTitle }}</span>
 		</div>
 		<div class="nav-button" @click.prevent="goNext">
 			<span class="nav-title">{{ nextTitle }}</span>
-			<div class="arrow-right"><img src="/src/assets/back.png" alt="" /></div>
+			<div class="arrow-right"><img src="~/assets/back.png" alt="" /></div>
 		</div>
 	</div>
 </template>
