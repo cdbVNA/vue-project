@@ -1,249 +1,377 @@
+
 <template>
-	<header class="header">
-		<div class="top-menu">
-			<div class="burger" @click="toggleMenu">
-				<div :class="{ line: true, active: isMenuOpen }"></div>
-				<div :class="{ line: true, active: isMenuOpen }"></div>
-				<div :class="{ line: true, active: isMenuOpen }"></div>
-			</div>
-		</div>
-		<div
-			class="full-screen-menu"
-			:class="{ open: isMenuOpen }"
-			@click.self="closeMenu"
-		>
-			<div class="menu-content">
-				<div class="logo">
-					<img src="/src/assets/logo.png" alt="" />
-					<hr />
-				</div>
-				<ul class='content_text'>
-					<li>
-						<a href="/" @click.native="closeMenu">
-							<div>Главная</div>
-						</a>
-						<hr />
-					</li>
-					<li>
-						<a href="/illustrator" @click.native="closeMenu">
-							<div>Иллюстраторы</div>
-						</a>
-						<hr />
-					</li>
-					<li>
-						<a href="/territory" @click.native="closeMenu">
-							<div>Территория Внукова</div>
-						</a>
-						<hr />
-					</li>
-					<li>
-						<button @click="togglePhoto" class="has-submenu">Биография ↓</button>
-						<div>
-							<ul v-if="isPhotoOpen" class="submenu">
-								<li><a href="/photo/0" @click.native="closeMenu">ЯПОНИЯ: путешествие на Восток</a></li>
-								<li><a href="/photo/1" @click.native="closeMenu">НАЛЬЧИК: детство на Кавказе</a></li>
-								<li><a href="/photo/2" @click.native="closeMenu">БОЕВОЙ ПУТЬ: от Эльхотово до Мукдена</a></li>
-								<li><a href="/photo/3" @click.native="closeMenu">МОЙ ДРУГ ИНДЕЕЦ: история Сат Ока</a></li>
-								<li><a href="/photo/4" @click.native="closeMenu">РЕДАКЦИЯ: публикации в журналах и газетах</a></li>
-								<li><a href="/photo/5" @click.native="closeMenu">ПУТЕШЕСТВИЕ НА СЕВЕР: геологоразведка
-								</a></li>
-							</ul>
-						</div>
-						<hr />
-					</li>
-					<li to="/page5" @click.native="closeMenu">
-						setest
-						<hr />
-					</li>
-					<li>
-						<button @click="toggleBooks" class="has-submenu">Книги ↓</button>
-						<ul v-if="isBooksOpen" class="submenu">
-							<li><a href="/book/1" @click.native="closeMenu">Книга 1</a></li>
-							<li><a href="/book/2" @click.native="closeMenu">Книга 2</a></li>
-							<!-- добавьте сюда другие страницы по id -->
-						</ul>
-						<hr />
-					</li>
-					<li></li>
-				</ul>
-			</div>
-		</div>
-	</header>
+  <div class="menu">
+    <div v-if="isMenuOpen" class="overlay" @click="closeMenu"></div>
+    <div :class="['top-menu', { 'main-page': isHomePage, 'other-page': !isHomePage }]">
+      <div class="logo-container">
+        <router-link to="/">
+          <img src="/src/assets/logo.png" alt="Логотип" class="logo" />
+        </router-link>
+      </div>
+      <div class="top-menu_right">
+        <!-- Якорные ссылки на главной -->
+        <div v-if="isHomePage" class="anchors" :class="{ hidden: isMenuOpen }">
+          <a href="#biography" @click="closeMenu">Биография</a>
+          <a href="#books" @click="closeMenu">Книги</a>
+        </div>
+
+        <div class="burger" @click="toggleMenu">
+          <div :class="{ line: true, active: isMenuOpen }"></div>
+          <div :class="{ line: true, active: isMenuOpen }"></div>
+          <div :class="{ line: true, active: isMenuOpen }"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Бургер -->
+    <div class="burger-menu" :class="{ open: isMenuOpen }" @click.self="closeMenu">
+      <div class="menu-content">
+        <ul class="content_text">
+          <li>
+            <a href="/" @click="closeMenu"><div>Главная</div></a>
+          </li>
+          <li>
+            <button @click="toggleGallery" class="has-submenu">Биография ↓</button>
+            <div>
+              <ul v-if="isGalleryOpen" class="submenu" role="menu" aria-label="Биография">
+                <li v-for="(photo, index) in photos" :key="index" role="menuitem">
+                  <a :href="photo.link" class="photos" @click="closeMenu" :aria-label="photo.title">{{ photo.title }}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/journal" @click.native="closeMenu"><div>Журналы и газеты</div></a>
+          </li>
+          <li>
+            <button @click="toggleBooks" class="has-submenu">Книги ↓</button>
+            <ul v-if="isBooksOpen" class="submenu" role="menu" aria-label="Книги">
+              <li v-for="(book, index) in books" :key="index" role="menuitem">
+                <a :href="book.link" class="books" @click="closeMenu" :aria-label="book.title">{{ book.title }}</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/illustrator" @click.native="closeMenu">
+              <div>Иллюстраторы</div>
+            </a>
+          </li>
+          <li>
+            <button @click="toggleContests" class="has-submenu">Конкурсы ↓</button>
+            <ul v-if="isContestsOpen" class="submenu">
+              <li><a href="/contest/autor" @click.native="closeMenu">Конкурс «Песни Перьев» </a></li>
+              <li><a href="/contest/drawing" @click.native="closeMenu">Конкурс рисунков</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/territory" @click.native="closeMenu">
+              <div>Территория Внукова</div>
+            </a>
+          </li>
+          <li>
+            <a href="/about" @click.native="closeMenu"> <div>О нас</div></a>
+          </li>
+          <li>
+            <a href="/kids" @click.native="closeMenu"><div>Детский раздел</div></a>
+          </li>
+          <li>
+            <a href="/contacts" @click.native="closeMenu">
+              <div>Контакты</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import books from '@/books.js'
+import photos from '@/photos.js'
+
 export default {
-	data() {
-		return {
-			isMenuOpen: false,
-			isPhotoOpen: false,
-			isBooksOpen: false,
-		}
-	},
-	methods: {
-		toggleMenu() {
-			this.isMenuOpen = !this.isMenuOpen
-		},
-		closeMenu() {
-			this.isMenuOpen = false
-			this.isPhotoOpen = false
-			this.isBooksOpen = false
-		},
-		toggleBio() {
-			this.isPhotoOpen = !this.isPhotoOpen
-		},
-		toggleBooks() {
-			this.isBooksOpen = !this.isBooksOpen
-		},
-	},
+  setup() {
+    const route = useRoute()
+    const isHomePage = computed(() => route.path === '/')
+    const isMenuOpen = ref(false)
+    const isGalleryOpen = ref(false)
+    const isBooksOpen = ref(false)
+    const isContestsOpen = ref(false)
+
+const toggleMenu = () => {
+      isMenuOpen.value = !isMenuOpen.value
+    }
+    const closeMenu = () => {
+      isMenuOpen.value = false
+      isGalleryOpen.value = false
+      isBooksOpen.value = false
+      isContestsOpen.value = false
+    }
+    const toggleGallery = () => {
+      isGalleryOpen.value = !isGalleryOpen.value
+    }
+    const toggleBooks = () => {
+      isBooksOpen.value = !isBooksOpen.value
+    }
+    const toggleContests = () => {
+      isContestsOpen.value = !isContestsOpen.value
+    }
+    return {
+      isHomePage,
+      isMenuOpen,
+      isGalleryOpen,
+      isBooksOpen,
+      isContestsOpen,
+      toggleMenu,
+      closeMenu,
+      toggleGallery,
+      toggleBooks,
+      toggleContests,
+      books,
+      photos,
+    }
+  },
 }
 </script>
 
 <style scoped>
-.header {
-	position: fixed;
-	width: 100%;
-	height: 70px;
-	background-color: rgb(141, 164, 182, 0.8);
-	position: fixed;
-	margin: 0 auto;
-	z-index: 999;
-	transition: background-color 0.3s;
+.menu {
+  position: sticky; top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(141, 164, 182, 0.8);
+  margin: 0 auto;
+  z-index: 999;
+  transition: background-color 0.3s;
+  -webkit-box-shadow: 0px 9px 20px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 9px 20px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 9px 20px 0px rgba(0, 0, 0, 0.2);
 }
-header::after {
-	content: '';
-	position: absolute;
-	bottom: -40px;
-	transform: rotate(180deg);
-	width: 100%;
-	height: 40px;
-	background-color: rgb(141, 164, 182, 0.8);
-	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
+
 .top-menu {
-	padding: 20px 30px;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 0 40px;
 }
-.burger {
-	width: 30px;
-	height: 25px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	cursor: pointer;
-	z-index: 999;
+.top-menu,
+.top-menu_right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
 }
-.line {
-	height: 3px;
-	background-color: #000;
-	transition: 0.3s;
+.top-menu_right.main-page {
+  justify-content: flex-end;
+  gap: 30px;
+  padding: 10px 30px;
 }
-.line.active:nth-child(1) {
-	transform: rotate(45deg) translate(5px, 5px);
+.top-menu_right.other-page {
+  padding: 0px 30px;
+  justify-content: space-between;
 }
-.line.active:nth-child(2) {
-	opacity: 0;
-}
-.line.active:nth-child(3) {
-	transform: rotate(-45deg) translate(10px, -10px);
+/* Логотип */
+.logo-container {
+  margin-top: 5px;
+  max-width: 180px;
 }
 
-.full-screen-menu {
-	position: fixed;
-	top: 0;
-	overflow: auto;
-	left: 0;
-	width: 100%;
-	height: 0;
-	background-color: rgb(141, 164, 182);
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	transition: height 0.4s ease, padding 0.5s ease;
-	z-index: 997;
-	align-items: flex-start;
-	padding: 0;
-}
-.full-screen-menu::-webkit-scrollbar {
-	width: 0px;
-}
-
-.full-screen-menu.open {
-	height: 100vh;
-	padding: 50px 20px;
-}
-
-.menu-content {
-	display: flex;
-	flex-direction: column;
-	margin-top: auto;
-	opacity: 0;
-	transition: opacity 0.9s ease, transform 0.9s ease;
-}
 .logo {
-	margin: 0;
+  width: 100%;
+  height: auto;
 }
-.logo img {
-	max-height: 100%;
-	width: auto;
+/* Якорные ссылки */
+.anchors {
+  display: flex;
+  flex-direction: row;
+  z-index: 1000;
+  gap: 10px;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.anchors.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-20px);
+}
+
+.anchors a {
+  font-size: 1.2em;
+  color: #000000a5;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.anchors a:hover {
+  color: #000;
+}
+
+/* Бургер */
+.burger {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.line {
+  height: 3px;
+  background-color: #000;
+  transition: 0.3s;
+}
+
+.line.active:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.line.active:nth-child(2) {
+  opacity: 0;
+}
+
+.line.active:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Меню */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 995;
+  transition: transform 0.5s;
+}
+
+.burger-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: rgb(141, 164, 182);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.burger-menu.open {
+  transform: translateX(0);
+}
+.menu-content {
+  overflow-y: auto;
+  flex: 1;
+}
+.menu-content::-webkit-scrollbar {
+  width: 0px;
 }
 .content_text {
-	padding-top: 40px;
-	display: flex;
-	gap: 40px;
-	flex-direction: column;
+  list-style: none;
+  padding: 30px 0;
+  margin: 0;
 }
-.full-screen-menu.open .menu-content {
-	opacity: 1;
-	transform: translateY(0);
+.content_text a,
+.content_text button {
+  display: block;
+  width: 100%;
+  font-size: 1.3em;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Vollkorn', serif;
+  font-weight: 500;
+  color: #000;
+  transition: background 0.3s;
 }
-
-/* Ссылки меню */
-li {
-	color: #000;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 5em;
-	padding: 8px 12px;
-	transition: background 0.5s;
+.content_text a:hover,
+.content_text button:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
-li a {
-	text-decoration: none;
-	color: #000;
-}
-
 .has-submenu {
-	cursor: pointer;
-	position: relative;
-	font-weight: 500;
-	text-transform: uppercase;
-	border: none;
-	background-color: rgb(141, 164, 182, 0.8);
-	font-size: 1em;
-	font-family: 'Vollkorn', serif;
+  cursor: pointer;
+  position: relative;
 }
-
-.has-submenu > .submenu {
-	margin-left: 20px;
-	display: flex;
-	gap: 10px;
-	flex-direction: column;
-	font-size: 0.5em;
-	transition: line-height 0.5s, color 0.9s;
+.submenu {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: max-height 0.3s ease;
 }
-
 .submenu li {
-	font-size: 0.5em;
-	padding: 8px 12px;
-	list-style: none;
-	border-radius: 4px;
-	transition: background 0.3s;
+  padding: 0px 12px;
+  font-size: 1em;
+  border-radius: 4px;
+  background: rgb(141, 164, 182);
 }
-hr {
-	margin: 0;
-	width: 100%;
+li .books,
+li .photos {
+  font-size: 1em;
+  padding: 5px;
+}
+@media (min-width: 480px) and (max-width: 768px) {
+}
+
+@media screen and (max-width: 482px) {
+  .menu {
+    width: 100%;
+    height: 40px;
+  }
+  .top-menu {
+    padding: 0px 10px;
+  }
+  .logo-container {
+    max-width: 100px;
+  }
+  /* Скрываем якорные ссылки на мобильных */
+  .anchors {
+    display: none;
+  }
+  /* Бургер */
+  .burger {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .line {
+    height: 2px;
+    background-color: #000;
+    transition: 0.3s;
+  }
+  .line.active:nth-child(1) {
+    transform: rotate(45deg) translate(3px, 3px);
+  }
+  .line.active:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  /* Меню */
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s;
+  }
+  .burger-menu {
+    width: 100%;
+    height: 100%;
+    background: rgb(141, 164, 182);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    padding: 20px;
+  }
+.submenu {
+  margin-left: 5px;
+}
 }
 </style>

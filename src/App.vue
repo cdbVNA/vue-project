@@ -1,16 +1,16 @@
 <template>
-	<div>
-		<Header />
-		<router-view></router-view>
-    <Footer />
-	</div>
+	<Header />
+	<ScrollTop />
+	<router-view></router-view>
+	<Footer />
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+import ScrollTop from './components/ScrollTop.vue'
 
 export default {
-	components: { Header, Footer },
+	components: { Header, ScrollTop, Footer },
 }
 </script>

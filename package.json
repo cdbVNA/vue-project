@@ -12,6 +12,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vue-pdf-viewer/viewer": "^3.2.3",
+    "pdfjs-dist": "^5.4.296",
     "vue": "^3.5.18",
     "vue-burger-menu": "^2.0.5",
     "vue-router": "^4.5.1"

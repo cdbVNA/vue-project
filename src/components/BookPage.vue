@@ -1,75 +1,107 @@
 <template>
-	<div class="book-page">
-		<div class="content">
-			<div class="cover">
-				<img :src="book.src" :alt="book.title" />
-			</div>
-			<div class="text-block">
-				<h1 class="title">{{ book.title }}</h1>
-				<p class="description">{{ book.description }}</p>
-				<h2 class="characteristics-title">Характеристики</h2>
-				<ul class="characteristics">
-					<li><strong>Автор:</strong> {{ book.author }}</li>
-					<li><strong>Художник:</strong> {{ book.artist }}</li>
-					<li><strong>Издательство:</strong> {{ book.publisher }}</li>
-					<li><strong>Год:</strong> {{ book.year }}</li>
-					<li><strong>Серия:</strong> {{ book.series }}</li>
-					<li><strong>Жанр:</strong> {{ book.genre }}</li>
-				</ul>
-				<h2 class="annotation-title">Аннотация</h2>
-				<p class="annotation">{{ book.annotation }}</p>
+	<div v-if="book">
+		<div class="book-page">
+			<div class="content">
+				<div class="cover">
+					<img :src="book.src" :alt="book.title" />
+				</div>
+				<div class="text-block">
+					<h2 class="title">{{ book.title }}</h2>
+					<p class="annotation-text">{{ book.annotation.slice(0, 230) + (book.annotation.length > 200 ? '...'
+						: '') }}</p>
+					<div class="annotation-button"><button @click.prevent="scrollToAnnotation">Полная аннотация</button>
+					</div>
+					<h2 class="title">Характеристики</h2>
+					<ul class="characteristics">
+						<li><strong>Автор:</strong> {{ book.author }}</li>
+						<li><strong>Художник:</strong> {{ book.artist }}</li>
+						<li><strong>Издательство:</strong> {{ book.publisher }}</li>
+						<li><strong>Год:</strong> {{ book.year }}</li>
+						<li><strong>Жанр:</strong> {{ book.genre }}</li>
+					</ul>
+				</div>
+				<div id="quote">
+					<h2 class="title">Цитаты</h2>
+					<div class="quote-text">
+						<img src="/src/assets/forging.png" alt="" />
+						<p>{{ book.quote_one }}</p>
+					</div>
+					<div class="quote-text">
+						<img src="/src/assets/forging.png" alt="" />
+						<p>{{ book.quote_two }}</p>
+					</div>
+					<div class="quote-text">
+						<img src="/src/assets/forging.png" alt="" />
+						<p>{{ book.quote_tree }}</p>
+					</div>
+				</div>
+				<div id="annotation">
+					<h2 class="title">Аннотация</h2>
+					<p class="annotation-text">{{ book.annotation }}</p>
+				</div>
 			</div>
 		</div>
 	</div>
-	<button class="back-button" @click="$router.back()">← Назад</button>
+	<div v-else>
+		<p>Книга не найдена</p>
+	</div>
+	<div class="navigation" v-if="book">
+		<div class="nav-button" @click.prevent="goBack">
+			<div class="arrow-left"><img src="/src/assets/back.png" alt="" /></div>
+			<span class="nav-title">{{ prevTitle }}</span>
+		</div>
+		<div class="nav-button" @click.prevent="goNext">
+			<span class="nav-title">{{ nextTitle }}</span>
+			<div class="arrow-right"><img src="/src/assets/back.png" alt="" /></div>
+		</div>
+	</div>
 </template>
 
 <script>
+import books from '@/books.js'
+
 export default {
-	data() {
-		return {
-			books: [
-				{
-					id: 1,
-					src: '/src/assets/book/book.jpg',
-					title: 'ОДИН',
-					description:
-						'Что делать, когда твой родной город оккупирован вражескими войсками, а мама не разрешает даже выходить на улицу? Но друзья Гриша и Серёга находят способ помочь нашим сапёрам. Для младшего школьного возраста.',
-					author: 'Внуков Николай Андреевич',
-					artist: 'Лямин Николай',
-					publisher: 'Детская литература, 2022',
-					year: '1988',
-					series: 'Детям о Великой Отечественной войне',
-					genre: 'Молодежная литература',
-					annotation:
-						'Что делать, когда твой родной город оккупирован вражескими войсками, а мама не разрешает даже выходить на улицу? Но друзья Гриша и Серёга находят способ помочь нашим сапёрам. Для младшего школьного возраста.',
-				},
-				{
-					id: 2,
-					src: 'src/assets/writer/2.png',
-					title: 'Книга 2',
-					description: 'Описание книги 2...',
-				},
-				{
-					id: 3,
-					src: 'src/assets/writer/3.png',
-					title: 'Книга 3',
-					description: 'Описание книги 3...',
-				},
-				{
-					id: 4,
-					src: 'src/assets/writer/4.png',
-					title: 'Книга 4',
-					description: 'Описание книги 4...',
-				},
-				// добавьте больше книг
-			],
-		}
+	props: {
+		id: {
+			type: [String, Number],
+			required: true,
+		},
 	},
 	computed: {
 		book() {
-			const id = parseInt(this.$route.params.id)
-			return this.books.find(b => b.id === id) || {}
+			const bookId = String(this.id)
+			return books.find(b => String(b.id) === bookId)
+		},
+		currentIndex() {
+			return books.findIndex(b => String(b.id) === String(this.id))
+		},
+		prevTitle() {
+			const prevIdx = (this.currentIndex - 1 + books.length) % books.length
+			return books[prevIdx].title
+		},
+		nextTitle() {
+			const nextIdx = (this.currentIndex + 1) % books.length
+			return books[nextIdx].title
+		},
+	},
+
+	methods: {
+		goNext() {
+			const nextIdx = (this.currentIndex + 1) % books.length
+			const nextId = books[nextIdx].id
+			this.$router.push({ path: `/book/${nextId}` }).then(() => {
+				window.scrollTo({ top: 0, behavior: 'auto' })
+			})
+		},
+		goBack() {
+			const prevIdx = (this.currentIndex - 1 + books.length) % books.length
+			const prevId = books[prevIdx].id
+			this.$router.push({ path: `/book/${prevId}` }).then(() => {
+				window.scrollTo({ top: 0, behavior: 'auto' })
+			})
+		},
+		scrollToAnnotation() {
+			document.getElementById('annotation').scrollIntoView({ behavior: 'auto' })
 		},
 	},
 }
@@ -80,23 +112,6 @@ export default {
 	margin: 0 auto;
 	padding: 40px;
 	font-family: 'Georgia', serif;
-}
-
-/* Кнопка назад */
-.back-button {
-	top: 20px;
-	left: 20px;
-	background-color: #007bff;
-	color: #fff;
-	border: none;
-	padding: 10px 15px;
-	border-radius: 6px;
-	cursor: pointer;
-	font-size: 1em;
-	transition: background-color 0.3s;
-}
-.back-button:hover {
-	background-color: #0056b3;
 }
 
 /* Основной контент */
@@ -112,13 +127,13 @@ export default {
 
 /* Обложка книги */
 .cover {
-	flex: 0 0 350px;
+	flex: 0 0 300px;
 }
+
 .cover img {
 	width: 100%;
-	border-radius: 8px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-	max-width: 350px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+	max-width: 250px;
 	height: auto;
 }
 
@@ -126,46 +141,129 @@ export default {
 .text-block {
 	flex: 1;
 }
+
 .title {
-	font-size: 2em;
+	font-size: 1.7em;
 	margin-bottom: 10px;
-	font-weight: bold;
+	font-weight: 700;
 	color: #222;
+	padding: 10px 0;
 	text-align: left;
 }
 
-.description {
-	font-size: 1.2em;
-	line-height: 1.5;
-	margin-bottom: 20px;
-	color: #555;
-	text-align: justify;
-}
 .characteristics-title {
 	font-size: 1.5em;
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
+
 .characteristics {
 	list-style: none;
 	padding: 0;
 	margin: 0 0 20px 0;
 }
+
 .characteristics strong {
-	color: rgb(141, 164, 182, 0.8);
+	color: rgb(141, 164, 182);
+	font-weight: 400;
 }
+
 .characteristics li {
 	margin-bottom: 8px;
 	font-size: 1.1em;
 }
+
+.quote-text {
+	display: flex;
+	align-items: flex-start;
+	padding: 30px 30px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin: 20px 0;
+	gap: 10px;
+	background-color: rgba(141, 164, 182, 0.43);
+}
+
+.quote-text img {
+	width: 2%;
+}
+
 .annotation-title {
 	font-size: 1.5em;
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
-.annotation {
+
+.annotation-text,
+.quote-text p {
 	font-size: 1.2em;
+	text-align: justify;
 	line-height: 1.5;
+}
+
+.annotation-text {
 	color: #555;
+}
+
+.annotation-button {
+	margin-bottom: 20px;
+}
+
+button {
+	padding: 8px 16px;
+	font-size: 1em;
+	cursor: pointer;
+	border: none;
+	color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+	.book-page {
+		padding: 20px;
+	}
+
+	.content {
+		margin-top: 30px;
+		flex-direction: column;
+	}
+
+	.cover {
+		margin: 0 auto;
+	}
+
+	.characteristics {
+		margin-bottom: 40px;
+	}
+
+	p {
+		margin: 5px auto;
+	}
+
+	.annotation-button {
+		margin: 20px 0 40px;
+	}
+}
+
+@media screen and (max-width: 482px) {
+	.book-page {
+		padding: 20px;
+	}
+
+	.content {
+		margin-top: 20px;
+	}
+
+	.characteristics {
+		margin-bottom: 40px;
+	}
+
+	.annotation-text,
+	.quote-text p {
+		font-size: 1em;
+		line-height: 1;
+	}
+
+	.annotation-button {
+		margin: 20px 0;
+	}
 }
 </style>
