@@ -18,7 +18,7 @@
 					года.
 				</p>
 			</div>
-			<div class="advice_img"><img src="~/pages/contest/author/assets/Song.png" alt="" /></div>
+			<div class="advice_img"><img src="/src/pages/contest/author/assets/Song.png" alt="" /></div>
 		</div>
 
 		<div class="container">
