@@ -32,13 +32,7 @@
 		</div>
 		<div class="regulations">
 			<div class="regulation">
-				<a href="/path/to/your/file2024.docx" download>
-					<img :src="Icon" alt="" class="icon" />
-					<p>Положение детского литературного конкурса имени Н.А. Внукова “Песни перьев” 2024г.</p>
-				</a>
-			</div>
-			<div class="regulation">
-				<a href="/path/to/your/file2023.docx" download>
+				<a :href="pdf" target="_blank" rel="noopener noreferrer">
 					<img :src="Icon" alt="" class="icon" />
 					<p>Положение детского литературного конкурса имени Н.А. Внукова “Песни перьев” 2023г.</p>
 				</a>
@@ -51,12 +45,13 @@ import { ref } from 'vue'
 import AdviceLinks from '@/pages/contest/author/components/AdviceLinks.vue'
 import Icon from '@/pages/contest/author/assets/icon.png'
 import Song from '@/pages/contest/author/assets/Song.png'
+import pdf from '@/pages/contest/author/assets/Pesni_peryev_-_2025.pdf'
 
 export default {
 	components: { AdviceLinks },
 	setup() {
 		const videos = ref([{ link: 'https://vkvideo.ru/video_ext.php?oid=-44348240&id=456240440&hash=df70987d68d11d3d' }, { link: 'https://vkvideo.ru/video_ext.php?oid=-44348240&id=456240439&hash=6506210ab0f44df0' }, { link: 'https://vkvideo.ru/video_ext.php?oid=-44348240&id=456240438&hash=cab492643618e37f' }])
-		return { videos, Song, Icon }
+		return { videos, Song, Icon, pdf }
 	},
 }
 </script>
