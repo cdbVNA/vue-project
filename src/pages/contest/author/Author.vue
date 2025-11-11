@@ -1,5 +1,5 @@
 <template>
-	<div class="wrapper"> 
+	<div class="wrapper">
 		<div class="container">
 			<div class="container_title">
 				<h1>Конкурс «Песни Перьев»</h1>
@@ -9,16 +9,9 @@
 		</div>
 		<div class="advice">
 			<div class="advice_text">
-				<p>
-					В ноябре 2025 года стартует третий сезон Детского литературного конкурса имени Н.А. Внукова «Песни
-					перьев». Если ты мечтаешь рассказать историю своего мира, отправить читателей в удивительные миры и
-					с удовольствием переводишь художественные произведения с других языков, то этот конкурс для тебя.
-					Принять участие могут дети от 10 до 18 лет, которые любят писать и мечтают стать настоящими
-					писателями. Подробные условия участия и <a href="#">Положение Конкурса</a> опубликуем осенью 2025
-					года.
-				</p> 
+				<p>В ноябре 2025 года стартует третий сезон Детского литературного конкурса имени Н.А. Внукова «Песни перьев». Если ты мечтаешь рассказать историю своего мира, отправить читателей в удивительные миры и с удовольствием переводишь художественные произведения с других языков, то этот конкурс для тебя. Принять участие могут дети от 10 до 18 лет, которые любят писать и мечтают стать настоящими писателями. Подробные условия участия и <a href="#">Положение Конкурса</a> опубликуем осенью 2025 года.</p>
 			</div>
-			<div class="advice_img"><img src="/author/Song.png" alt="" /></div>
+			<div class="advice_img"><img :src="Song" alt="" /></div>
 		</div>
 
 		<div class="container">
@@ -40,13 +33,13 @@
 		<div class="regulations">
 			<div class="regulation">
 				<a href="/path/to/your/file2024.docx" download>
-					<img src="/author/icon.png" alt="" class="icon" />
+					<img :src="Icon" alt="" class="icon" />
 					<p>Положение детского литературного конкурса имени Н.А. Внукова “Песни перьев” 2024г.</p>
 				</a>
 			</div>
 			<div class="regulation">
 				<a href="/path/to/your/file2023.docx" download>
-					<img src="/author/icon.png" alt="" />
+					<img :src="Icon" alt="" class="icon" />
 					<p>Положение детского литературного конкурса имени Н.А. Внукова “Песни перьев” 2023г.</p>
 				</a>
 			</div>
@@ -56,24 +49,14 @@
 <script>
 import { ref } from 'vue'
 import AdviceLinks from '@/pages/contest/author/components/AdviceLinks.vue'
+import Icon from '@/pages/contest/author/assets/icon.png'
+import Song from '@/pages/contest/author/assets/Song.png'
+
 export default {
 	components: { AdviceLinks },
 	setup() {
-		const videos = ref([
-			{
-				link: 'author/3.mp4',
-				thumbnail: 'author/3.png',
-			},
-			{
-				link: 'author/1.MP4',
-				thumbnail: 'author/1.png',
-			},
-			{
-				link: 'author/2.mp4',
-				thumbnail: 'author/2.png',
-			},
-		])
-		return { videos }
+		const videos = ref([{ link: 'https://vkvideo.ru/video_ext.php?oid=-44348240&id=456240440&hash=df70987d68d11d3d' }, { link: 'https://vkvideo.ru/video_ext.php?oid=-44348240&id=456240439&hash=6506210ab0f44df0' }, { link: 'https://vkvideo.ru/video_ext.php?oid=-44348240&id=456240438&hash=cab492643618e37f' }])
+		return { videos, Song, Icon }
 	},
 }
 </script>
@@ -145,12 +128,10 @@ p {
 
 .regulation p {
 	text-align: left;
-
 }
 
 /* Мобильная адаптация */
-@media(max-width: 768px) {
-
+@media (max-width: 768px) {
 	.advice {
 		flex-direction: column;
 		align-items: center;
@@ -180,10 +161,8 @@ p {
 		justify-content: center;
 	}
 
-
 	.container_title {
 		padding-top: 40px;
 	}
-
 }
 </style>

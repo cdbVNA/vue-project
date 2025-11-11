@@ -1,8 +1,7 @@
 <template>
 	<div class="advice-list">
 		<div v-for="(video, index) in videos" :key="index" class="video-item">
-			<video class="video-player" :src="video.link" controls width="100%" :poster="video.thumbnail"></video>
-			<div class="title">{{ video.title }}</div>
+			<iframe :src="video.link" width="1000" height="563" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
 		</div>
 	</div>
 </template>

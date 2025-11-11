@@ -2,9 +2,9 @@
 	<div class="page-container">
 		<header class="header">
 			<video class="banner-video" autoplay muted loop playsinline>
-				<source src="/kids/ship.mp4" type="video/mp4" />
+				<source :src="Video" type="video/mp4" />
 				Ваш браузер не поддерживает видео.
-			</video> 
+			</video>
 			<div class="overlay-text">
 				<h1>Внуков</h1>
 				<p>Николай Андреевич</p>
@@ -27,7 +27,7 @@
 				<p>Произведения Николая Внукова для детей 6+</p>
 			</div>
 		</div>
-		<div class="book-container"> 
+		<div class="book-container">
 			<main id="carousel">
 				<img class="book-item" v-for="book in books" :key="book.id" @click="openBookPage(book.id)" :src="book.src" alt="" />
 			</main>
@@ -50,14 +50,20 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import Video from '@/pages/kids/assets/ship.mp4'
+import book from '@/assets/book/book.jpg'
+import book3 from '@/assets/book/book3.png'
+import book9 from '@/assets/book/book10.webp'
+import book13 from '@/assets/book/book14.webp'
+import book15 from '@/assets/book/book16.png'
 
 // Массив книг с путями к изображениям
 const books = ref([
-	{ id: 10, src: '/assets/book/book10.webp' },
-	{ id: 16, src: '/assets/book/book16.png' },
-	{ id: 3, src: '/assets/book/book3.png' },
-	{ id: 14, src: '/assets/book/book14.webp' },
-	{ id: 0, src: '/assets/book/book.jpg' },
+	{ id: 10, src: book9 },
+	{ id: 16, src: book15 },
+	{ id: 3, src: book3 },
+	{ id: 14, src: book13 },
+	{ id: 0, src: book },
 ])
 
 const router = useRouter()

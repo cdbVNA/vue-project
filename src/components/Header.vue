@@ -5,7 +5,7 @@
     <div :class="['top-menu', { 'main-page': isHomePage, 'other-page': !isHomePage }]">
       <div class="logo-container">
         <router-link to="/">
-          <img src="/assets/logo.png" alt="Логотип" class="logo" />
+          <img :src="LogoHeader" alt="Логотип" class="logo" />
         </router-link>
       </div>
       <div class="top-menu_right">
@@ -90,6 +90,7 @@ import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import books from '@/books.js'
 import photos from '@/photos.js'
+import LogoHeader from '@/assets/logo.png'
 
 export default {
   setup() {
@@ -102,7 +103,7 @@ export default {
 
 const toggleMenu = () => {
       isMenuOpen.value = !isMenuOpen.value
-    }
+    } 
     const closeMenu = () => {
       isMenuOpen.value = false
       isGalleryOpen.value = false
@@ -131,6 +132,7 @@ const toggleMenu = () => {
       toggleContests,
       books,
       photos,
+		LogoHeader
     }
   },
 }

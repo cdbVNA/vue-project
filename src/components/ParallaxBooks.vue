@@ -1,4 +1,4 @@
-<template>
+<template> 
   <div class="parallax-container">
     <!-- Первая строка -->
     <div class="row odd-row" :style="{ transform: 'translateX(' + offsetOdd + 'px)' }">

@@ -1,7 +1,7 @@
 <template>
   <a v-if="showButton" href="#top" class="scroll-top" @click.prevent="scrollToTop">
     <img src="https://img.icons8.com/?size=100&id=70IXP2au0nm2&format=png&color=000000" alt="Наверх" />
-  </a>
+  </a> 
 </template>
 
 <script>

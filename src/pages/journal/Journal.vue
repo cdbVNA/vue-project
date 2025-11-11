@@ -3,65 +3,63 @@
 		<div class="container">
 			<div class="container_title">
 				<h1>Журналы и Газеты</h1>
-				<hr /> 
-				<p>Николай Внуков входил в редакционную коллегию детского журнала «Костёр», печатался в газетах «Смена»,
-					«Ленинские искры», журнале «Аврора», «Искорка», «Юный следопыт». В этом разделе вы найдёте архив
-					публикаций писателя: рассказы, очерки, повести и много интересных заметок.</p>
+				<hr />
+				<p>Николай Внуков входил в редакционную коллегию детского журнала «Костёр», печатался в газетах «Смена», «Ленинские искры», журнале «Аврора», «Искорка», «Юный следопыт». В этом разделе вы найдёте архив публикаций писателя: рассказы, очерки, повести и много интересных заметок.</p>
 			</div>
 		</div>
 		<div class="fire">
 			<div class="fire-container">
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="journal/assets/fire1958.pdf" />
+						<VPdfViewer :src="fire1958" />
 					</div>
 					<h2>Костер №05, 1968</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="journal/assets/fire1968.pdf" />
+						<VPdfViewer :src="fire1968" />
 					</div>
 					<h2>Костер №06, 1968</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="journal/assets/fire.pdf" />
+						<VPdfViewer :src="fire" />
 					</div>
 					<h2>Костер №10, 1968</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="journal/assets/fire1974.pdf" />
+						<VPdfViewer :src="fire1974" />
 					</div>
 					<h2>Костер №11, 1974</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="journal/assets/fire19961.pdf" />
+						<VPdfViewer :src="fire19961" />
 					</div>
 					<h2>Костер №10, 1996</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="journal/assets/fire19964.pdf" />
+						<VPdfViewer :src="fire19964" />
 					</div>
 					<h2>Костер №10, 1968</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="journal/assets/fire1996.pdf" />
+						<VPdfViewer :src="fire1996" />
 					</div>
 					<h2>Костер №10, 1968</h2>
 				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="journal/assets/fire2001.pdf" />
+						<VPdfViewer :src="fire2001" />
 					</div>
 					<h2>Костер №10, 1968</h2>
-				</div> 
+				</div>
 				<div class="fire-item">
 					<div class="item-pdf">
-						<VPdfViewer src="journal/assets/fire2004.pdf" />
+						<VPdfViewer :src="fire2004" />
 					</div>
 					<h2>Костер №10, 1968</h2>
 				</div>
@@ -72,6 +70,15 @@
 
 <script setup>
 import { VPdfViewer } from '@vue-pdf-viewer/viewer'
+import fire1958 from '@/pages/journal/assets/fire1958.pdf'
+import fire1968 from '@/pages/journal/assets/fire1968.pdf'
+import fire from '@/pages/journal/assets/fire.pdf'
+import fire1974 from '@/pages/journal/assets/fire1974.pdf'
+import fire19961 from '@/pages/journal/assets/fire19961.pdf'
+import fire19964 from '@/pages/journal/assets/fire19964.pdf'
+import fire1996 from '@/pages/journal/assets/fire1996.pdf'
+import fire2001 from '@/pages/journal/assets/fire2001.pdf'
+import fire2004 from '@/pages/journal/assets/fire2004.pdf'
 </script>
 
 <style scoped>

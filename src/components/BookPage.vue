@@ -1,5 +1,5 @@
 <template>
-	<div v-if="book">
+	<div v-if="book"> 
 		<div class="book-page">
 			<div class="content">
 				<div class="cover">
@@ -23,15 +23,15 @@
 				<div id="quote"> 
 					<h2 class="title">Цитаты</h2>
 					<div class="quote-text">
-						<img src="/assets/forging.png" alt="" />
+						<img :src="forging" alt="" />
 						<p>{{ book.quote_one }}</p>
 					</div>
 					<div class="quote-text">
-						<img src="/assets/forging.png" alt="" />
+						<img :src="forging" alt="" />
 						<p>{{ book.quote_two }}</p>
 					</div>
 					<div class="quote-text">
-						<img src="/assets/forging.png" alt="" />
+						<img :src="forging" alt="" />
 						<p>{{ book.quote_tree }}</p>
 					</div>
 				</div>
@@ -47,18 +47,20 @@
 	</div>
 	<div class="navigation" v-if="book">
 		<div class="nav-button" @click.prevent="goBack">
-			<div class="arrow-left"><img src="/assets/back.png" alt="" /></div>
+			<div class="arrow-left"><img :src="back" alt="" /></div>
 			<span class="nav-title">{{ prevTitle }}</span>
 		</div>
 		<div class="nav-button" @click.prevent="goNext">
 			<span class="nav-title">{{ nextTitle }}</span>
-			<div class="arrow-right"><img src="/assets/back.png" alt="" /></div>
+			<div class="arrow-right"><img :src="back" alt="" /></div>
 		</div>
 	</div>
 </template>
 
 <script>
 import books from '@/books.js'
+import forging from '@/assets/forging.png'
+import back from '@/assets/back.png'
 
 export default {
 	props: {

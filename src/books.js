@@ -1,8 +1,27 @@
+import book from '@/assets/book/book.jpg'
+import book1 from '@/assets/book/book1.png'
+import book2 from '@/assets/book/book2.webp'
+import book3 from '@/assets/book/book3.png'
+import book4 from '@/assets/book/book4.png'
+import book5 from '@/assets/book/book5.webp'
+import book6 from '@/assets/book/book7.png'
+import book7 from '@/assets/book/book8.webp'
+import book8 from '@/assets/book/book9.png'
+import book9 from '@/assets/book/book10.webp'
+import book10 from '@/assets/book/book11.png'
+import book11 from '@/assets/book/book12.png'
+import book12 from '@/assets/book/book13.png'
+import book13 from '@/assets/book/book14.webp'
+import book14 from '@/assets/book/book15.png'
+import book15 from '@/assets/book/book16.png'
+import book16 from '@/assets/book/book17.png'
+import book18 from '@/assets/book/book3.jpg'
+
 export default [
 	{
 		id: 0,
 		link: '/book/0',
-		src: '/assets/book/book.jpg',
+		src: book,
 		title: 'Приказ по шестому полку',
 		author: 'Внуков Николай Андреевич',
 		artist: 'Лямин Николай',
@@ -18,7 +37,7 @@ export default [
 	{
 		id: 1,
 		link: '/book/1',
-		src: '/assets/book/book1.png',
+		src: book1,
 		title: 'Паруса над волнами',
 		author: 'Внуков Николай Андреевич',
 		artist: 'Яхнин Рудольф',
@@ -35,7 +54,7 @@ export default [
 	{
 		id: 2,
 		link: '/book/2',
-		src: '/assets/book/book2.webp',
+		src: book2,
 		title: 'Розовая Гвиана',
 		author: 'Внуков Николай ',
 		artist: 'Шабанов Юрий',
@@ -49,9 +68,9 @@ export default [
 		quote_tree: 'Кто учит немецкий, тем легче. Там слова произносятся точно так, как пишутся, и вообще по-немецки можно разговаривать почти не открывая рта. Если не верите — попробуйте. Наверное, немецкий язык выдумал человек, у которого всю жизнь болели зубы. Интересно, что болело у человека, который выдумал английский?',
 	},
 	{
-		id:18 ,
+		id: 18,
 		link: '/book/18',
-		src: '/assets/book/book3.jpg',
+		src: book18,
 		title: 'Главный экспонат',
 		author: 'Внуков Николай',
 		artist: ' Шевченко Владимир',
@@ -67,7 +86,7 @@ export default [
 	{
 		id: 3,
 		link: '/book/3',
-		src: '/assets/book/book3.png',
+		src: book3,
 		title: 'Путешествие не кончается',
 		author: 'Внуков Николай',
 		artist: 'Рудаков Сергей',
@@ -83,7 +102,7 @@ export default [
 	{
 		id: 4,
 		link: '/book/4',
-		src: '/assets/book/book4.png',
+		src: book4,
 		title: 'Динамис мобилис (сборник)',
 		author: 'Внуков Николай Андреевич',
 		artist: 'Селизаров Леонтий ',
@@ -100,7 +119,7 @@ export default [
 	{
 		id: 5,
 		link: '/book/5',
-		src: '/assets/book/book5.webp',
+		src: book5,
 		title: 'Один',
 		author: 'Внуков Николай',
 		artist: 'Жмайлов Игорь',
@@ -115,11 +134,10 @@ export default [
 		quote_tree: 'Время… Интересная это штука. Его можно беречь, можно экономить, можно терять, можно гробить. Оно то течёт тоненькой ленивой струйкой, то несётся лавиной, сметая всё на своём пути. Его то не хватает, то так много, что не знаешь, что с ним делать. Эх, если бы его можно было занимать в долг или прятать куда-нибудь про запас, чтобы потом использовать с толком!',
 	},
 
-
 	{
 		id: 7,
 		link: '/book/7',
-		src: '/assets/book/book7.png',
+		src: book6,
 		title: 'Тот, кто называл себя О. Генри',
 		author: 'Внуков Николай',
 		artist: 'Киселёв Юрий',
@@ -135,7 +153,7 @@ export default [
 	{
 		id: 8,
 		link: '/book/8',
-		src: '/assets/book/book8.webp',
+		src: book7,
 		title: 'Наша восемнадцатая осень',
 		author: 'Внуков Николай',
 		artist: 'Хвостов Владимир',
@@ -152,7 +170,7 @@ export default [
 	{
 		id: 9,
 		link: '/book/9',
-		src: '/assets/book/book9.png',
+		src: book8,
 		title: 'Фотография Архимеда',
 		author: 'Внуков Николай',
 		artist: 'Селизаров Леонтий',
@@ -168,7 +186,7 @@ export default [
 	{
 		id: 10,
 		link: '/book/10',
-		src: '/assets/book/book10.webp',
+		src: book9,
 		title: 'На чужих крыльях',
 		author: 'Внуков Николай',
 		artist: ' Лямин Николай',
@@ -184,7 +202,7 @@ export default [
 	{
 		id: 11,
 		link: '/book/11',
-		src: '/assets/book/book11.png',
+		src: book10,
 		title: 'Великие путешественники. Биографический словарь',
 		author: 'Внуков Николай',
 		artist: 'Макарова Светлана',
@@ -201,7 +219,7 @@ export default [
 	{
 		id: 12,
 		link: '/book/12',
-		src: '/assets/book/book12.png',
+		src: book11,
 		title: 'Слушайте песню перьев',
 		author: 'Внуков Николай',
 		artist: 'Рейпольский Алексей',
@@ -217,7 +235,7 @@ export default [
 	{
 		id: 13,
 		link: '/book/13',
-		src: '/assets/book/book13.png',
+		src: book12,
 		title: 'Четыре рассказа о войне (сборник)',
 		author: 'Внуков Николай',
 		artist: 'Лямин Николай',
@@ -233,7 +251,7 @@ export default [
 	{
 		id: 14,
 		link: '/book/14',
-		src: '/assets/book/book14.webp',
+		src: book13,
 		title: 'Москва за нами',
 		author: 'Внуков Николай',
 		artist: 'Рудаков С., Рудакова И.',
@@ -249,7 +267,7 @@ export default [
 	{
 		id: 15,
 		link: '/book/15',
-		src: '/assets/book/book15.png',
+		src: book14,
 		title: 'Огненное кольцо',
 		author: 'Внуков Николай Андреевич',
 		artist: '',
@@ -265,7 +283,7 @@ export default [
 	{
 		id: 16,
 		link: '/book/16',
-		src: '/assets/book/book16.png',
+		src: book15,
 		title: 'Старая гильза',
 		author: 'Внуков Николай',
 		artist: 'Кочергина Н.',
@@ -281,7 +299,7 @@ export default [
 	{
 		id: 17,
 		link: '/book/17',
-		src: '/assets/book/book17.png',
+		src: book16,
 		title: '«Сверре» зовет на помощь',
 		author: 'Внуков Николай',
 		artist: 'Аносов Евгений ',

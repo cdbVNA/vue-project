@@ -1,5 +1,5 @@
 <template>
-	<div v-if="photo">
+	<div v-if="photo"> 
 		<div class="photo-page">
 			<div class="photo-container">
 				<div class="photo-img">
@@ -17,18 +17,18 @@
 	</div>
 	<div class="navigation" v-if="photo">
 		<div class="nav-button" @click.prevent="goBack">
-			<div class="arrow-left"><img src="/assets/back.png" alt="" /></div>
+			<div class="arrow-left"><img :src="back" alt="" /></div>
 			<span class="nav-title">{{ prevTitle }}</span>
 		</div> 
 		<div class="nav-button" @click.prevent="goNext">
 			<span class="nav-title">{{ nextTitle }}</span>
-			<div class="arrow-right"><img src="/assets/back.png" alt="" /></div>
+			<div class="arrow-right"><img :src="back" alt="" /></div>
 		</div>
 	</div>
 </template>
 
 <script>
-//import back from '@/assets/back.png'
+import back from '@/assets/back.png'
 import photos from '@/photos'
 
 export default {
