@@ -34,7 +34,7 @@
 			<div class="regulation">
 				<a :href="pdf" target="_blank" rel="noopener noreferrer">
 					<img :src="Icon" alt="" class="icon" />
-					<p>Положение детского литературного конкурса имени Н.А. Внукова “Песни перьев” 2023г.</p>
+					<p>Положение детского литературного конкурса имени Н.А. Внукова “Песни перьев” 2025г.</p>
 				</a>
 			</div>
 		</div>
@@ -88,9 +88,8 @@ export default {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-p {
-	margin: 0;
-	font-size: 1.5em;
+.container_title p{
+margin-bottom: 20px;
 }
 
 .regulation {
@@ -126,18 +125,18 @@ p {
 }
 
 /* Мобильная адаптация */
-@media (max-width: 768px) {
+@media screen and (max-width: 1000px) {
 	.advice {
 		flex-direction: column;
 		align-items: center;
 	}
 
 	.advice_text {
-		flex: 1 1 100%;
-		font-size: 1em;
 		text-align: center;
 	}
-
+p{
+	
+}
 	.advice_img {
 		flex: 1 1 100%;
 		margin-top: 20px;

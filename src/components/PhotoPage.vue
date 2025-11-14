@@ -1,13 +1,17 @@
 <template>
-	<div v-if="photo"> 
+	<div v-if="photo">
 		<div class="photo-page">
 			<div class="photo-container">
 				<div class="photo-img">
 					<img :src="photo.src" :alt="photo.title" :class="{ photo1: photo.id === 1 }" />
 				</div>
 				<div class="photo-text">
-					<h2>{{ photo.title }}</h2>
-					<p>{{ photo.text }}</p>
+					<div class="photo-title">
+						<h2>{{ photo.title }}</h2>
+					</div>
+					<div class="photo-description">
+						<p>{{ photo.text }}</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -18,60 +22,72 @@
 	<div class="navigation" v-if="photo">
 		<div class="nav-button" @click.prevent="goBack">
 			<div class="arrow-left"><img :src="back" alt="" /></div>
-			<span class="nav-title">{{ prevTitle }}</span>
-		</div> 
+			<p class="nav-title" style='text-align: left;'>{{ prevTitle }}</p>
+		</div>
 		<div class="nav-button" @click.prevent="goNext">
-			<span class="nav-title">{{ nextTitle }}</span>
+			<p class="nav-title" style='text-align: right;'>{{ nextTitle }}</p>
 			<div class="arrow-right"><img :src="back" alt="" /></div>
 		</div>
 	</div>
 </template>
 
 <script>
+import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import back from '@/assets/back.png'
 import photos from '@/photos'
-
-export default {
+import { defineComponent } from 'vue'
+export default defineComponent({
 	props: {
 		id: {
 			type: [String, Number],
 			required: true,
 		},
 	},
-	computed: {
-		photo() {
-			const photoId = String(this.id)
+	setup(props) {
+		const router = useRouter()
+
+		const photo = computed(() => {
+			const photoId = String(props.id)
 			return photos.find(p => String(p.id) === photoId)
-		},
-		currentIndex() {
-			return photos.findIndex(p => String(p.id) === String(this.id))
-		},
-		prevTitle() {
-			const prevIdx = (this.currentIndex - 1 + photos.length) % photos.length
+		})
+
+		const currentIndex = computed(() => {
+			return photos.findIndex(p => String(p.id) === String(props.id))
+		})
+
+		const prevTitle = computed(() => {
+			const prevIdx = (currentIndex.value - 1 + photos.length) % photos.length
 			return photos[prevIdx].title
-		},
-		nextTitle() {
-			const nextIdx = (this.currentIndex + 1) % photos.length
+		})
+
+		const nextTitle = computed(() => {
+			const nextIdx = (currentIndex.value + 1) % photos.length
 			return photos[nextIdx].title
-		},
-	},
-	methods: {
-		goNext() {
-			const nextIdx = (this.currentIndex + 1) % photos.length
+		})
+
+		const goNext = () => {
+			const nextIdx = (currentIndex.value + 1) % photos.length
 			const nextId = photos[nextIdx].id
-			this.$router.push({ path: `/photo/${nextId}` }).then(() => {
-				window.scrollTo({ top: 0, behavior: 'instant' });
-			});
-		},
-		goBack() {
-			const prevIdx = (this.currentIndex - 1 + photos.length) % photos.length
+			router.push({ path: `/photo/${nextId}` })
+		}
+
+		const goBack = () => {
+			const prevIdx = (currentIndex.value - 1 + photos.length) % photos.length
 			const prevId = photos[prevIdx].id
-			this.$router.push({ path: `/photo/${prevId}` }).then(() => {
-				window.scrollTo({ top: 0, behavior: 'instant' });
-			});
-		},
+			router.push({ path: `/photo/${prevId}` })
+		}
+
+		return {
+			photo,
+			prevTitle,
+			nextTitle,
+			goNext,
+			goBack,
+			back
+		}
 	},
-}
+})
 </script>
 
 <style scoped>
@@ -112,34 +128,28 @@ export default {
 	flex-direction: row;
 	justify-content: space-between;
 }
-
+.photo-title {
+	flex: 1;
+	padding-bottom: 20px;
+	white-space: pre-line;
+}
 h2 {
-	font-size: 4em;
 	text-align: left;
-	flex: 1;
+	width: 70%;
+}
+.photo-description {
 	white-space: pre-line;
+	flex: 1;
 }
 
-p {
-	font-size: 1.5em;
-	flex: 1;
-	width: 50%;
-	white-space: pre-line;
-}
-
-@media screen and (max-width: 768px) {
-	.photo-page {
-		min-width: 360px;
-	}
-
-
+@media screen and (max-width: 1000px) {
 	.photo-container {
 		text-align: center;
 	}
 
 	.photo-img {
 		width: 100%;
-		height: auto;
+		height: 500px;
 		margin: 0 auto;
 	}
 
@@ -149,17 +159,6 @@ p {
 		flex-direction: column;
 		margin-top: 10px;
 	}
-
-	h2 {
-		font-size: 1.5em;
-		line-height: 1;
-	}
-
-	p {
-		font-size: 0.7em;
-		width: 100%;
-	}
-
 }
 
 @media screen and (max-width: 482px) {

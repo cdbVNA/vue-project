@@ -113,7 +113,7 @@ export default {
 .book-page {
 	margin: 0 auto;
 	padding: 40px;
-	font-family: 'Georgia', serif;
+	font-family: 'Mulish';
 }
 
 /* Основной контент */
@@ -217,8 +217,77 @@ button {
 	border: none;
 	color: #000000;
 }
+@media screen and (max-width: 1600px){
+.title {
+	font-size: 2em;
+}
 
-@media screen and (max-width: 768px) {
+.characteristics-title {
+	font-size: 1.5em;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.characteristics {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px 0;
+}
+
+.characteristics strong {
+	color: rgb(141, 164, 182);
+	font-weight: 400;
+}
+
+.characteristics li {
+	margin-bottom: 8px;
+	font-size: 1.1em;
+}
+
+.quote-text {
+	display: flex;
+	align-items: flex-start;
+	padding: 30px 30px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin: 20px 0;
+	gap: 10px;
+	background-color: rgba(141, 164, 182, 0.43);
+}
+
+.quote-text img {
+	width: 2%;
+}
+
+.annotation-title {
+	font-size: 1.5em;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.annotation-text,
+.quote-text p {
+	font-size: 1.2em;
+	text-align: justify;
+	line-height: 1.5;
+}
+
+.annotation-text {
+	color: #555;
+}
+
+.annotation-button {
+	margin-bottom: 20px;
+}
+
+button {
+	padding: 8px 16px;
+	font-size: 1em;
+	cursor: pointer;
+	border: none;
+	color: #000000;
+}
+}
+@media screen and (max-width: 1000px) {
 	.book-page {
 		padding: 20px;
 	}

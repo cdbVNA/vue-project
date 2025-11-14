@@ -1,7 +1,7 @@
 <template>
 	<div class="advice-list">
 		<div v-for="(video, index) in videos" :key="index" class="video-item">
-			<iframe :src="video.link" width="1000" height="563" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+			<iframe :src="video.link" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
 		</div>
 	</div>
 </template>
@@ -21,33 +21,47 @@ export default {
 <style scoped>
 .advice-list {
 	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	max-width: 1000px;
-	margin: 0 auto;
-	gap: 40px;
 	justify-content: center;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
 }
 .video-item {
-	display: flex;
-	flex-direction: column;
-	text-decoration: none;
-	color: inherit;
-	align-items: center;
+	width: 1462px;
+	height: 800px;
+	background: transparent;
+	overflow: hidden;
+	padding: 0 20px;
+	position: relative;
 	transition: transform 0.3s, box-shadow 0.3s;
 }
-
+.video-item iframe {
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s ease-in-out;
+}
 .video-item:hover {
 	transform: scale(1.05);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-.thumbnail {
-	width: 100%;
-	border-radius: 8px;
+@media screen and (max-width: 1600px) {
+	.video-item {
+		width: 1000px;
+		height: 500px;
+	}
 }
-.title {
-	margin-top: 8px;
-	font-size: 1em;
-	text-align: center;
+
+@media screen and (max-width: 1000px) {
+	.video-item {
+		height: 250px;
+		width: 500px;
+	}
+}
+
+@media screen and (max-width: 482px) {
+	.video-item {
+		height: 180px;
+		width: 360px;
+	}
 }
 </style>

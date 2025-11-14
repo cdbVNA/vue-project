@@ -37,7 +37,7 @@
 
 		<div class="quote">
 			<div class="quote_text">
-				<q>Желание вообразить себя на месте другого человека, пережить вместе с ним необыкновенные приключения и трудные испытания, видимо, это и привело меня в литературу. Первую, детскую попытку я сделал ещё в школе, классе в шестом. Мы с приятелем никак не могли достать не очень известную сейчас книгу Марка Твена «Том Сойер — разбойник», а прочитать, побыть Томом ужасно хотелось. И тогда мы сочинили её сами... Так что, о ком я ни пишу, я всё-таки пишу и о себе</q>
+				<q>Мы с приятелем никак не могли достать не очень известную сейчас книгу Марка Твена «Том Сойер — разбойник», а прочитать, побыть Томом ужасно хотелось. И тогда мы сочинили её сами... Так что, о ком я ни пишу, я всё-таки пишу и о себе</q>
 				<p>Николай Внуков</p>
 			</div>
 			<img :src="quote" alt="" />
@@ -184,11 +184,6 @@ header {
 	margin-bottom: 8px;
 }
 
-.about-info {
-	font-size: 1.3em;
-	font-family: 'Mulish';
-}
-
 .gallery {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -286,63 +281,51 @@ header {
 	margin-top: 10px;
 }
 
-@media screen and (max-width: 768px) {
-	.header {
-		flex-direction: column;
-		padding-top: 70px;
-	}
-
+@media screen and (max-width: 1600px) {
 	.header-text {
-		width: 100%;
 		padding: 30px;
 	}
 
 	.section-text {
-		padding: 70px 30px;
-		margin-top: 0;
+		padding: 70px;
 	}
 
 	.section_img {
-		position: static;
-		max-width: 100%;
-		margin: 20px 0;
-		padding: 0 30px;
+		right: 10px;
 	}
 
 	.section_img img {
-		max-width: 100%;
+		max-width: 70%;
 		height: auto;
+		margin: 0 auto;
 	}
 
 	.text_title {
-		font-size: 3em;
+		font-size: 2.5em;
 	}
 
 	.text_description {
-		font-size: 1.8em;
+		font-size: 1em;
 	}
 
 	.section-about {
-		padding: 70px 30px;
-		width: 100%;
+		padding: 20px;
 	}
 
 	.about-title {
-		font-size: 3.5em;
-	}
-
-	.about-info {
-		font-size: 1.3em;
-	}
-
-	.gallery {
-		grid-template-columns: 1fr;
-		gap: 10px;
-		padding: 10px;
+		font-size: 2.5em;
 	}
 
 	.photo {
 		width: 100%;
+	}
+
+	.overlay {
+		height: 170px;
+		justify-content: flex-start;
+	}
+	.title {
+		font-size: 2em;
 	}
 
 	.quote {
@@ -365,10 +348,97 @@ header {
 	}
 }
 
+@media screen and (max-width: 1000px) {
+	.header {
+		flex-direction: column;
+		padding-top: 70px;
+	}
+
+	.header-text {
+		width: 100%;
+		padding: 30px;
+	}
+
+	.section-text {
+		padding: 70px 30px 550px;
+		margin-top: 0;
+	}
+
+	.section_img {
+		position: absolute;
+		max-width: 100%;
+		margin: 0px auto;
+		right: 10px;
+		padding: 0 40px;
+		top: 480px;
+	}
+
+	.section_img img {
+		max-width: 70%;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	.text_title {
+		font-size: 3em;
+	}
+
+	.text_description {
+		font-size: 1.8em;
+	}
+
+	.section-about {
+		padding: 350px 30px 20px;
+		width: 100%;
+	}
+
+	.about-title {
+		font-size: 3.5em;
+	}
+
+
+	.gallery {
+		grid-template-columns: 1fr;
+		gap: 10px;
+		padding: 10px;
+	}
+
+	.photo {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.overlay {
+		height: 120px;
+		justify-content: flex-start;
+	}
+	.title {
+		font-size: 1.75em;
+		line-height: 1;
+	}
+	.quote {
+		flex-direction: row;
+		margin: 100px auto 20px;
+		padding: 10px;
+	}
+
+	.quote_text {
+		width: 50%;
+		padding: 15px;
+	}
+
+	.quote_text q,
+	.quote_text p {
+		font-size: 0.9em;
+	}
+
+	.quote img {
+		max-width: 700px;
+	}
+}
+
 @media screen and (max-width: 482px) {
 	.header {
 		flex-direction: column;
-		min-width: 360px;
 		padding-top: 50px;
 	}
 
@@ -405,7 +475,7 @@ header {
 	}
 
 	.section-about {
-		padding: 250px 20px 20px;
+		padding: 200px 20px 20px;
 		width: 100%;
 	}
 
@@ -422,25 +492,31 @@ header {
 	.photo {
 		width: 100%;
 	}
+	.overlay {
+		height: 60px;
+		justify-content: flex-start;
+	}
 	.title {
-		font-size: 1.5em;
+		font-size: 1em;
 		font-weight: 500;
+		line-height: 1;
 		padding: 10px;
 	}
 	.quote {
 		flex-direction: column;
+		margin: 40px 0 20px;
 		padding: 10px;
 	}
 
 	.quote_text {
 		width: 100%;
-		padding: 40px 20px;
+		padding: 40px 30px;
 		line-height: 1;
 	}
 
 	.quote_text q,
 	.quote_text p {
-		font-size: 0.6em;
+		font-size: 0.85em;
 		padding: 0;
 	}
 

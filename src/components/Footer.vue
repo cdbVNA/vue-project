@@ -24,12 +24,12 @@
 					</div>
 				</div>
 				<div class="footer-logo">
-					<div class="logo_cdb">
+					<a href="https://cbsvib.ru/library/centralnaya-detskaya-biblioteka-im-n-vnukova" class="logo_cdb">
 						<img :src="cdb" alt="" />
-					</div>
-					<div class="logo_cbs">
+					</a>
+					<a href="https://cbsvib.ru/" class="logo_cbs">
 						<img :src="cbs" alt="" />
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>
